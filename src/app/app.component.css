@@ -22,7 +22,7 @@ html, body {
   margin-right: auto;
   margin-left: auto;
   top: 13vh;
-  width: 53vw;
+  width: 55vw;
   height: 15.8vh;
   background-color: rgba(118, 119, 132, 0.214);
   border-radius: 8px;
@@ -33,7 +33,7 @@ textarea {
     display: block;
     margin-right: auto;
     margin-left: auto;
-    width: 47vw;
+    width: 49vw;
     top: 2.2vh;
     height: 10vh;
     background-color: rgba(255, 255, 255, 0);
@@ -70,4 +70,44 @@ textarea::placeholder {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(36, 38, 56);
+}
+
+.keyboard {
+  position: relative;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  top: 17vh;
+  width: 55vw;
+  height: 39vh;
+}
+
+.button {
+  border-style: solid;
+  border-color: rgba(118, 119, 132, 0.214);
+  border-width: 2px;
+  border-radius: 8px;
+  width: 6%;
+  font-family: 'Alegreya Sans SC';
+  font-size: 3vh;
+  font-weight: 300;
+  color:rgb(182, 182, 182);
+  position: relative;
+}
+
+.button:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.first-row {
+  position: absolute;
+  top: 0vh;
+}
+
+.delete {
+  height: 7vh;
+  width: 7vh;
+  right: 0vw;
 }

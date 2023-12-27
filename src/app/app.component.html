@@ -1,6 +1,14 @@
 <html>
   <label class='title'>Virtual Keyboard</label>
-  <div class="input-rect">
+  <div class='input-rect'>
     <textarea placeholder='Tap to start'></textarea>
   </div>
+
+  <div class='keyboard'>
+    <div *ngFor='let buttonValue of firstRow; let i = index' class='button first-row' style='left:{{i*7}}%;'>
+    </div>
+    <div class="delete button first-row"></div>
+
+  </div>
 </html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
