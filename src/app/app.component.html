@@ -5,9 +5,46 @@
   </div>
 
   <div class='keyboard'>
+    <!-- first row -->
     <div *ngFor='let buttonValue of firstRow; let i = index' class='button first-row' style='left:{{i*7}}%;'>
+      <label class="button-txt">{{ buttonValue }}</label>
     </div>
-    <div class="delete button first-row"></div>
+    <div class="delete button first-row">
+      <label class="button-txt">delete</label>
+    </div>
+
+    <!-- second row -->
+    <div class="tab button second-row">
+      <label class="button-txt">tab</label>
+    </div>
+    <div *ngFor='let buttonValue of secondRow; let i = index' class='button second-row' style='left:{{9.65+i*7}}%;'>
+      <label class="button-txt">{{ buttonValue }}</label>
+    </div>
+
+    <!-- third row -->
+    <div class="caps-lock button third-row">
+      <label class="button-txt">capslk</label>
+    </div>
+    <div *ngFor='let buttonValue of thirdRow; let i = index' class='button third-row' style='left:{{11+i*7}}%;'>
+      <label class="button-txt">{{ buttonValue }}</label>
+    </div>
+    <div class="enter button third-row">
+      <label class="button-txt">enter</label>
+    </div>
+
+    <!-- fourth row -->
+    <div class="left-shift button fourth-row">
+      <label class="button-txt">shift</label>
+    </div>
+    <div *ngFor='let buttonValue of fourthRow; let i = index' class='button fourth-row' style='left:{{15.3+i*7}}%;'>
+      <label class="button-txt">{{ buttonValue }}</label>
+    </div>
+    <div class="right-shift button fourth-row">
+      <label class="button-txt">shift</label>
+    </div>
+
+    <!-- fourth row -->
+    <div class="space button fifth-row"></div>
 
   </div>
 </html>

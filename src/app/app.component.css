@@ -78,8 +78,14 @@ textarea::placeholder {
   margin-right: auto;
   margin-left: auto;
   top: 17vh;
-  width: 55vw;
+  width: 60vw;
   height: 39vh;
+}
+
+.button-txt {
+  position: absolute;
+  left: 6px;
+  top: 3px;
 }
 
 .button {
@@ -88,6 +94,7 @@ textarea::placeholder {
   border-width: 2px;
   border-radius: 8px;
   width: 6%;
+  height: 7vh;
   font-family: 'Alegreya Sans SC';
   font-size: 3vh;
   font-weight: 300;
@@ -95,10 +102,41 @@ textarea::placeholder {
   position: relative;
 }
 
-.button:after {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
+.button:hover {
+  background-color: rgba(118, 119, 132, 0.214);
+  cursor: pointer;
+}
+
+.delete {
+  width: 8.6%;
+  right: 0vw;
+}
+
+.tab {
+  width: 8.63%;
+}
+
+.caps-lock {
+  width: 9.98%;
+}
+
+.enter {
+  width: 11.6%;
+  right: 0vw;
+}
+
+.left-shift {
+  width: 14.2%;
+  left: 0vw;
+}
+
+.right-shift {
+  width: 14.2%;
+  right: 0vw;
+}
+
+.space {
+  width: 99.6%;
 }
 
 .first-row {
@@ -106,8 +144,23 @@ textarea::placeholder {
   top: 0vh;
 }
 
-.delete {
-  height: 7vh;
-  width: 7vh;
-  right: 0vw;
+.second-row {
+  position: absolute;
+  top: 8.3vh;
 }
+
+.third-row {
+  position: absolute;
+  top: 16.6vh;
+}
+
+.fourth-row {
+  position: absolute;
+  top: 24.9vh;
+}
+
+.fifth-row {
+  position: absolute;
+  top: 33.2vh;
+}
+
