@@ -1,0 +1,73 @@
+html, body {
+    height: 100vh;
+    margin: -8px;
+    padding: 0;
+    background-color: rgb(36, 38, 56);
+}
+
+.title {
+    font-family: 'Alegreya Sans SC';
+    font-size: 13vh;
+    font-weight: 100;
+    color:rgb(182, 182, 182);
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 10vh;
+}
+
+.input-rect {
+  position: relative;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  top: 13vh;
+  width: 53vw;
+  height: 15.8vh;
+  background-color: rgba(118, 119, 132, 0.214);
+  border-radius: 8px;
+}
+
+textarea {
+    position: relative;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 47vw;
+    top: 2.2vh;
+    height: 10vh;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
+    outline: none;
+    border-radius: 8px;
+    font-family: 'Alegreya Sans SC';
+    font-size: 3vh;
+    font-weight: 300;
+    padding-right: 20px;
+    color:rgb(182, 182, 182);
+    resize: none;
+}
+
+textarea::placeholder {
+  position: relative;
+  font-family: 'Alegreya Sans SC';
+  font-size: 3vh;
+  font-weight: 300;
+  color:rgb(182, 182, 182);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(182, 182, 182); 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: rgba(36, 38, 56, 0.425); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(36, 38, 56);
+}
