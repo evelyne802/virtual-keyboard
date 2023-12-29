@@ -1,51 +1,82 @@
 <html>
-  <label class='title'>Virtual Keyboard</label>
-  <div class='input-rect'>
-    <textarea placeholder='Tap to start'></textarea>
+  <div *ngIf="portrait">
+    <label class="rotate-label">rotate your screen</label>
+    
+    <div class="rotate-screen-div">
+      <img src="../assets/rotate.gif" class="gif"/>
+    </div>
   </div>
 
-  <div class='keyboard'>
-    <!-- first row -->
-    <div *ngFor='let buttonValue of firstRow; let i = index' class='button first-row' style='left:{{i*7}}%;'>
-      <label class="button-txt">{{ buttonValue }}</label>
+  <div *ngIf="!portrait">
+    <label class='title'>Virtual Keyboard</label>
+    <div class="input-rect">
+      <textarea placeholder="Tap to start" 
+                (focus) = "onFocus()"
+                (blur) = "onBlur()"
+                [(ngModel)]="input" 
+                (keydown.shift)="onShift()" 
+                (keydown.tab)="onTab()">{{ input }}</textarea>
     </div>
-    <div class="delete button first-row">
-      <label class="button-txt">delete</label>
+  
+    <div class="keyboard">
+      <!-- first row -->
+      <div *ngFor="let buttonValue of firstRow; let i = index" 
+            (click)="onKeyboardClick(buttonValue)" 
+            class="button first-row"
+            [ngClass]="key == buttonValue ? 'button-clicked' : ''"   
+            style="left:{{i*7}}%">
+        <label class="button-txt">{{ buttonValue }}</label>
+      </div>
+      <div (click)="onKeyboardClick('delete')" class="delete button first-row" [ngClass]="backspacePressed ? 'button-clicked' : ''">
+        <label class="button-txt">delete</label>
+      </div>
+  
+      <!-- second row -->
+      <div (click)="onKeyboardClick('tab')" class="tab button second-row" [ngClass]="tabPressed ? 'button-clicked' : ''">
+        <label class="button-txt">tab</label>
+      </div>
+      <div *ngFor="let buttonValue of secondRow; let i = index" 
+            (click)="onKeyboardClick(buttonValue)" 
+            class="button second-row"
+            [ngClass]="key == buttonValue ? 'button-clicked' : ''"   
+            style="left:{{9.65+i*7}}%">
+        <label class="button-txt">{{ buttonValue }}</label>
+      </div>
+  
+      <!-- third row -->
+      <div (click)="onKeyboardClick('capsLock')" class="caps-lock button third-row" [ngClass]="capsLockPressed ? 'button-clicked' : ''">
+        <label class="button-txt">capslk</label>
+      </div>
+      <div *ngFor="let buttonValue of thirdRow; let i = index" 
+            (click)="onKeyboardClick(buttonValue)" 
+            class="button third-row"
+            [ngClass]="key == buttonValue ? 'button-clicked' : ''"     
+            style="left:{{11+i*7}}%">
+        <label class="button-txt">{{ buttonValue }}</label>
+      </div>
+      <div (click)="onKeyboardClick('enter')" class="enter button third-row" [ngClass]="enterPressed ? 'button-clicked' : ''">
+        <label class="button-txt">enter</label>
+      </div>
+  
+      <!-- fourth row -->
+      <div (click)="onKeyboardClick('shift')" class="left-shift button fourth-row" [ngClass]="shiftPressed ? 'button-clicked' : ''">
+        <label class="button-txt">shift</label>
+      </div>
+      <div *ngFor="let buttonValue of fourthRow; let i = index" 
+            (click)="onKeyboardClick(buttonValue)" 
+            class="button fourth-row"
+            [ngClass]="key == buttonValue ? 'button-clicked' : ''"   
+            style="left:{{15.3+i*7}}%">
+        <label class="button-txt">{{ buttonValue }}</label>
+      </div>
+      <div (click)="onKeyboardClick('shift')" class="right-shift button fourth-row" [ngClass]="shiftPressed ? 'button-clicked' : ''">
+        <label class="button-txt">shift</label>
+      </div>
+  
+      <!-- fourth row -->
+      <div (click)="onKeyboardClick('space')" class="space button fifth-row" [ngClass]="key == ' ' ? 'button-clicked' : ''" ></div>
+  
     </div>
-
-    <!-- second row -->
-    <div class="tab button second-row">
-      <label class="button-txt">tab</label>
-    </div>
-    <div *ngFor='let buttonValue of secondRow; let i = index' class='button second-row' style='left:{{9.65+i*7}}%;'>
-      <label class="button-txt">{{ buttonValue }}</label>
-    </div>
-
-    <!-- third row -->
-    <div class="caps-lock button third-row">
-      <label class="button-txt">capslk</label>
-    </div>
-    <div *ngFor='let buttonValue of thirdRow; let i = index' class='button third-row' style='left:{{11+i*7}}%;'>
-      <label class="button-txt">{{ buttonValue }}</label>
-    </div>
-    <div class="enter button third-row">
-      <label class="button-txt">enter</label>
-    </div>
-
-    <!-- fourth row -->
-    <div class="left-shift button fourth-row">
-      <label class="button-txt">shift</label>
-    </div>
-    <div *ngFor='let buttonValue of fourthRow; let i = index' class='button fourth-row' style='left:{{15.3+i*7}}%;'>
-      <label class="button-txt">{{ buttonValue }}</label>
-    </div>
-    <div class="right-shift button fourth-row">
-      <label class="button-txt">shift</label>
-    </div>
-
-    <!-- fourth row -->
-    <div class="space button fifth-row"></div>
-
   </div>
 </html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
