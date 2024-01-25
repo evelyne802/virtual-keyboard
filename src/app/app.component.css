@@ -1,21 +1,36 @@
+
 html, body {
-    height: 100vh;
-    margin: -8px;
-    padding: 0;
-    background-color: rgb(36, 38, 56);
+  height: 100vh;
+  margin: -8px;
+  padding: 0;
+  background: var(--bg-img) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 1;
+  transition: .3s;
+}
+
+.portrait-bg {
+  height: 100vh;
+  margin: -8px;
+  padding: 0;
+  background-color: rgb(17 5 37);
 }
 
 .rotate-label {
   font-family: 'Alegreya Sans SC';
   font-size: 8vh;
   font-weight: 100;
-  color:rgb(182, 182, 182);
+  color: rgb(182, 182, 182);
   position: relative;
   display: block;
   margin-right: auto;
   margin-left: auto;
   top: 22vh;
   text-align: center;
+  width: 80%;
 }
 
 .gif {
@@ -40,11 +55,11 @@ html, body {
     font-family: 'Alegreya Sans SC';
     font-size: 13vh;
     font-weight: 100;
-    color:rgb(182, 182, 182);
+    color: var(--font-color);
     display: flex;
     justify-content: center;
     position: relative;
-    top: 9vh;
+    top: 5vh;
 }
 
 .input-rect {
@@ -52,10 +67,10 @@ html, body {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  top: 12vh;
+  top: 8vh;
   width: 55vw;
-  height: 15.8vh;
-  background-color: rgba(118, 119, 132, 0.214);
+  height: 15.8vh; 
+  background-color: var(--secondary-color);
   border-radius: 8px;
 }
 
@@ -75,7 +90,7 @@ textarea {
     font-size: 3vh;
     font-weight: 300;
     padding-right: 20px;
-    color:rgb(182, 182, 182);
+    color: var(--font-color); 
     resize: none;
 }
 
@@ -84,7 +99,7 @@ textarea::placeholder {
   font-family: 'Alegreya Sans SC';
   font-size: 3vh;
   font-weight: 300;
-  color:rgb(182, 182, 182);
+  color: var(--font-color); 
 }
 
 ::-webkit-scrollbar {
@@ -92,15 +107,15 @@ textarea::placeholder {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgb(182, 182, 182); 
+  background: var(--font-color); 
 }
  
 ::-webkit-scrollbar-thumb {
-  background: rgba(36, 38, 56, 0.425); 
+  background: var(--secondary-color); 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(36, 38, 56);
+  background: var(--bg-color);
 }
 
 .keyboard {
@@ -108,7 +123,7 @@ textarea::placeholder {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  top: 16vh;
+  top: 12vh;
   width: 60vw;
   height: 39vh;
 }
@@ -117,6 +132,7 @@ textarea::placeholder {
   position: absolute;
   left: 6px;
   top: 3px;
+  font-weight: 400;
 }
 
 .button-txt:hover {
@@ -124,30 +140,28 @@ textarea::placeholder {
 }
 
 .button {
-  border-style: solid;
-  border-color: rgba(118, 119, 132, 0.214);
-  border-width: 2px;
+  background-color: var(--secondary-color); ;
   border-radius: 8px;
-  width: 6%;
+  width: 6.2%;
   height: 7vh;
   font-family: 'Alegreya Sans SC';
   font-size: 2.4vh;
   font-weight: 300;
-  color:rgb(182, 182, 182);
+  color: var(--font-color);;
   position: relative;
 }
 
 .button:hover {
-  background-color: rgba(118, 119, 132, 0.214);
+  background-color: var(--secondary-color);
   cursor: pointer;
 }
 
 .button-clicked {
-  background-color: rgba(159, 160, 171, 0.214);
+  background-color: var(--active-color);
 }
 
 .button:active {
-  background-color: rgba(159, 160, 171, 0.214);
+  background-color: var(--active-color);
   cursor: pointer;
 }
 
@@ -206,5 +220,37 @@ textarea::placeholder {
 .fifth-row {
   position: absolute;
   top: 33.2vh;
+}
+
+
+.theme-switcher {
+  background-color: var(--secondary-color);
+  width: 40px;
+  height: 40px;
+  border-radius:  50px;
+  display: flex;
+  align-items: center;
+  gap: 1.7rem;
+  cursor: pointer;
+  padding: 0.66rem;
+  position: absolute;
+  right: 30px;
+  top: 25px;
+  z-index: 2;
+  border: none;
+  box-shadow: 0 2px 25px var(--shadow);
+  transition: all 0.3s;
+}
+
+.theme-switcher:hover {
+  box-shadow: 0 2px 25px var(--hover-shadow);
+  transition: all 0.3s;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  right:8px;
+  position: absolute;
 }
 

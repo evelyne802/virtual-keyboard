@@ -21,6 +21,7 @@ export class AppComponent {
   }
 
   title = 'VirtualKeyboard';
+  themeIcon = '../assets/sun.png';
   portrait = false;
   key='';
   input = '';
@@ -49,8 +50,7 @@ export class AppComponent {
       } else {
           this.portrait = false;
       }
-  });
-
+    });
 
     addEventListener('keydown', (event: KeyboardEvent) => {
       if (event.key === 'Delete' || event.key === 'Backspace') {
@@ -72,6 +72,14 @@ export class AppComponent {
       this.onCapsLock();
     });
 
+    window.matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change',({ matches }) => {
+    if (matches) {
+      setTheme('dark-theme');
+    } else {
+      setTheme('light-theme');
+    }
+})
   }
 
   @HostListener('document:keypress', ['$event'])
@@ -173,6 +181,17 @@ export class AppComponent {
         this.input += buttonValue;
     }
   }
+
+
+  toggleTheme() {
+    if (localStorage.getItem('theme') === 'dark-theme'){
+        this.themeIcon = '../assets/moon.png';
+        setTheme('light-theme');
+    } else {
+        this.themeIcon = '../assets/sun.png';
+        setTheme('dark-theme');
+    }
+   }
 }
 
 
@@ -185,6 +204,13 @@ function addSpaces(str: string, numSpaces: number){
   return a.join("");
 }
 
+
 function delay(ms: number) {
   return new Promise( resolve => setTimeout(resolve, ms) );
+}
+
+
+function setTheme(themeName: string) {
+  localStorage.setItem('theme', themeName);
+  document.documentElement.className = themeName;
 }

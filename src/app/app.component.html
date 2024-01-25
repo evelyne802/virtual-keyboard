@@ -1,13 +1,19 @@
 <html>
   <div *ngIf="portrait">
-    <label class="rotate-label">rotate your screen</label>
-    
-    <div class="rotate-screen-div">
-      <img src="../assets/rotate.gif" class="gif"/>
+    <div class='portrait-bg'>
+      <label class="rotate-label">rotate your screen</label>
+      <div class="rotate-screen-div">
+        <img src="../assets/rotate.gif" class="gif"/>
+      </div>
     </div>
   </div>
 
   <div *ngIf="!portrait">
+
+    <button id="switch" (click)="toggleTheme()" class="theme-switcher">
+      <img class="icon" [src]="themeIcon">
+    </button>
+
     <label class='title'>Virtual Keyboard</label>
     <div class="input-rect">
       <textarea placeholder="Tap to start" 

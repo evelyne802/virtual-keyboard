@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --font-color: rgb(225 225 225);
+  --secondary-color: rgba(3, 6, 41, 0.564);
+  --active-color: rgba(3, 6, 41, 0.771);
+  --bg-img: url('./assets/dark.jpg');
+  --shadow: rgba(111, 108, 108, 0.5);
+  --hover-shadow: rgba(140, 135, 135, 0.615);
+}
+
+.dark-theme {
+  --font-color: rgb(225 225 225);
+  --secondary-color: rgba(3, 6, 41, 0.564);
+  --active-color: rgba(3, 6, 41, 0.771);
+  --bg-img: url('./assets/dark.jpg');
+  --shadow: rgba(111, 108, 108, 0.5);
+  --hover-shadow: rgba(140, 135, 135, 0.615);
+}
+
+.light-theme {
+  --font-color: rgb(43, 43, 43);
+  --secondary-color: rgba(255, 255, 255, 0.564);
+  --active-color: rgba(255, 255, 255, 0.704);
+  --bg-img: url('./assets/light.jpg');
+  --shadow: rgba(71, 71, 71, 0.782);
+  --hover-shadow: rgba(40, 40, 40, 0.866);
+}
+
